@@ -4,7 +4,7 @@ mp.events.add("Client:FactionMarkers:UpdateMarker", updateMarker)
 mp.events.add("Client:FactionMarkers:LoadMarker", loadMarker)
 mp.events.add("Client:FactionMarkers:UnloadMarker", unloadMarker)
 mp.events.add("Client:FactionMarkers:Load", loadMarkers)
-mp.events.add("Client:FactionMarkers:UnLoad", unLoadMarkers)
+mp.events.add("Client:FactionMarkers:UnloadByFaction", unLoadMarkersByFactionId)
 mp.events.add("Client:FactionMarkers:UnloadByIds", unloadMarkersByIds)
 
 function updateMarker(fMarkerJson) {
@@ -73,7 +73,7 @@ function loadMarkers(json) {
     }
 }
 
-function unLoadMarkers(factionId) {
+function unLoadMarkersByFactionId(factionId) {
     const factionMarkers = markers.filter(x => x.FactionId == factionId);
     for (let i = 0; i < factionMarkers.length; i++) {
         const marker = factionMarkers[i];

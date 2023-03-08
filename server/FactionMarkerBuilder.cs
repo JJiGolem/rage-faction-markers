@@ -1,3 +1,4 @@
+using GTANetworkAPI;
 using System.Collections.Generic;
 
 namespace JJiGolem.Factions.DynamicMarkers
@@ -15,8 +16,6 @@ namespace JJiGolem.Factions.DynamicMarkers
                 AvailableForFactions = new List<uint>(),
                 Position = position
             };
-
-            _marker.AvailableForFactions.Add(factionId);
         }
 
         public FactionMarkerBuilder SetPosition(Vector3 position)
